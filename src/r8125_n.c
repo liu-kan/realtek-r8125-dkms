@@ -59,7 +59,7 @@
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,26)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,4,0)
-#include <linux/pci-aspm.h>
+//#include <linux/pci-aspm.h>
 #endif
 #endif
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,4,37)
@@ -292,11 +292,11 @@ static irqreturn_t rtl8125_interrupt_msix(int irq, void *dev_instance);
 void rtl8125_hw_config(struct net_device *dev);
 static int rtl8125_close(struct net_device *dev);
 static void rtl8125_set_rx_mode(struct net_device *dev);
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+//#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
 static void rtl8125_tx_timeout(struct net_device *dev, unsigned int txqueue);
-#else
-static void rtl8125_tx_timeout(struct net_device *dev);
-#endif
+//#else
+//static void rtl8125_tx_timeout(struct net_device *dev);
+//#endif
 static struct net_device_stats *rtl8125_get_stats(struct net_device *dev);
 static int rtl8125_rx_interrupt(struct net_device *, struct rtl8125_private *, struct rtl8125_rx_ring *, napi_budget);
 static int rtl8125_tx_interrupt(struct rtl8125_tx_ring *ring, int budget);
@@ -12999,13 +12999,13 @@ static void rtl8125_reset_task(struct work_struct *work)
                 rtl8125_schedule_work(dev, rtl8125_reset_task);
         }
 }
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+//#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
 static void
 rtl8125_tx_timeout(struct net_device *dev, unsigned int txqueue)
-#else
-static void
-rtl8125_tx_timeout(struct net_device *dev)
-#endif
+//#else
+//static void
+//rtl8125_tx_timeout(struct net_device *dev)
+//#endif
 {
         struct rtl8125_private *tp = netdev_priv(dev);
         unsigned long flags;
