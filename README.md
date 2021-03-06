@@ -1,6 +1,6 @@
-# Realtek r8125 DKMS for centos 8
+# Realtek r8125 DKMS for Redhat/Centos 8
 
-Since the kernel version 4.18.x distributed with CentOS 8 seems make a modification to make their kernel source tree compatible with mainline 5.6.x+, I made some changes in realtek-r8125 to allow it work under centos 8 kernel.
+Since the kernel version 4.18.x distributed with CentOS 8 seems make a modification to make their kernel source tree compatible with mainline 5.6.x+, I made some changes in realtek-r8125 to allow it work under Centos 8 kernel.
 This provides Realtek r8125 driver in DKMS way so that you can keep the latest driver even after the kernel upgrade.
 
 ## Installation
